@@ -32,13 +32,9 @@
     <div class="hero-unit">
       <h1>{{message}}</h1>
       <p>You now have:</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Sass</li>
-        <li>Modernizr</li>
-        <li>jQuery</li>
-        <li>VueJS</li>
-      </ul>
+        <ul id="example-1">
+          <li v-for="item in items">{{ item.message }}</li>
+        </ul>
     </div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -59,7 +55,7 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="./scripts/main.js"></script>
     <!-- endbuild -->
   </body>
       <script src="https://vuejs.org/js/vue.min.js"></script>
@@ -67,8 +63,15 @@
         var app = new Vue({
           el: '#app',
           data: {
-            message: 'Hello Vue World'
-          }
+            message: 'Hello Vue World',
+            items: [
+              { message: 'HTML5 Boilerplate' },
+              { message: 'Sass' },
+              { message: 'Modernizr' },
+              { message: 'jQuery' },
+              { message: 'VueJS' }
+            ]
+           }
         })
       </script>
 </html>
